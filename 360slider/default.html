@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>360slider</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="lib/css/theme.css">
+    <link rel="stylesheet" href="lib/css/styles.css">
+    <link rel="stylesheet" href="lib/css/css.css">
+    <link rel="stylesheet" href="lib/css/font-awesome.css">
+    <!--<link rel="stylesheet" href="lib/css/prism.css">-->
+    <link rel="stylesheet" href="lib/css/threesixty.css">
+
+    <script type="text/javascript" src="lib/js/jquery-1.10.2.min.js"></script>
+    <!--<script type="text/javascript" src="lib/js/modernizr.custom.66977.js"></script>-->
+    <!--<script type="text/javascript" src="lib/js/prism.js"></script>-->
+    <script type="text/javascript" src="lib/js/threesixty.min.js"></script>
+
+    <style>
+        #container {
+            margin-top: 120px;
+            min-height: 450px;
+        }
+
+        @media (max-width: 767px) {
+            .container-fluid {
+                padding: 0;
+            }
+
+            .container-fluid {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+        }
+
+        #container .threesixty .nav_bar a.nav_bar_previous {
+            background-position: 0 -73px;
+        }
+
+        #container .threesixty .nav_bar a {
+            display: block;
+            width: 32px;
+            height: 32px;
+            float: left;
+            background: url(lib/images/sprites.png) no-repeat;
+            text-indent: -99999px;
+        }
+
+        a {
+            color: #626c72;
+        }
+
+        a {
+            color: #0088cc;
+            text-decoration: none;
+        }
+
+        a:-webkit-any-link {
+            color: -webkit-link;
+            cursor: auto;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<section class="container-fluid" id="container">
+
+    <div class="threesixty product1" style="width: 500px; height: 223px;">
+        <div class="spinner" style="margin-top: 50px;">
+            <span>61%</span>
+        </div>
+        <ol class="threesixty_images" style="display: none;"></ol>
+    </div>
+    <a class="btn btn-danger custom_previous"><i class="icon-backward"></i> Previous</a>
+    <a class="btn btn-inverse custom_play"><i class="icon-play"></i> Play</a>
+    <a class="btn btn-inverse custom_stop"><i class="icon-pause"></i> Pause</a>
+    <a class="btn btn-danger custom_next">Next <i class="icon-forward"></i></a>
+</section>
+
+<script type="text/javascript">
+    window.onload = init;
+    var car;
+    function init() {
+        car = $('.product1').ThreeSixty({
+            totalFrames: 52,
+            endFrame: 52,
+            currentFrame: 1,
+
+            imgList: '.threesixty_images',
+            progress: '.spinner',
+            imagePath: './lib/images/car/',
+            filePrefix: '',
+            ext: '.png',
+            height: 223,
+            width: 500,
+            navigation: false,
+            disableSpin: true
+        });
+
+        $('.custom_previous').bind('click', function (e) {
+            car.previous();
+        });
+
+        $('.custom_next').bind('click', function (e) {
+            car.next();
+        });
+
+        $('.custom_play').bind('click', function (e) {
+            car.play();
+        });
+
+        $('.custom_stop').bind('click', function (e) {
+            car.stop();
+        });
+    }
+
+</script>
+</body>
+</html>

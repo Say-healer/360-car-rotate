@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--屏蔽标签拨号/email/address链接-->
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="format-detection" content="adress=no"/>
+    <!--不启用缓存-->
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <!-- 最新 ie -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>360slider</title>
+    <link rel="stylesheet" href="lib/css/styles.css">
+    <link rel="stylesheet" href="lib/css/threesixty.css">
+
+    <script type="text/javascript" src="lib/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../lib/js/threesixty.min.js"></script>
+
+    <style>
+        #container {
+            margin-top: 120px;
+            min-height: 450px;
+        }
+
+        @media (max-width: 767px) {
+            .container-fluid {
+                padding: 0;
+            }
+
+            .container-fluid {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+        }
+
+        #container .threesixty .nav_bar a.nav_bar_previous {
+            background-position: 0 -73px;
+        }
+
+        #container .threesixty .nav_bar a {
+            display: block;
+            width: 32px;
+            height: 32px;
+            float: left;
+            background: url(lib/images/sprites.png) no-repeat;
+            text-indent: -99999px;
+        }
+
+        a {
+            color: #626c72;
+        }
+
+        a {
+            color: #0088cc;
+            text-decoration: none;
+        }
+
+        a:-webkit-any-link {
+            color: -webkit-link;
+            cursor: auto;
+            text-decoration: underline;
+        }
+
+        .nav_bar{
+            margin-left: 40px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<section class="container-fluid" id="container">
+    <div class="threesixty product">
+        <div class="spinner">
+            <span>100%</span>
+        </div>
+        <ol class="threesixty_images"></ol>
+    </div>
+</section>
+
+<script type="text/javascript">
+    window.onload = init;
+
+    var product;
+
+    function init() {
+        product = $('.product').ThreeSixty({
+            totalFrames: 52,
+            endFrame: 30,
+            currentFrame: 1,
+            imgList: '.threesixty_images',
+            progress: '.spinner',
+            imagePath: './lib/images/car/',
+            filePrefix: '',
+            ext: '.png',
+            height: 223,
+            width: 500,
+            //navigation: true,
+            disableSpin: false
+        });
+    }
+
+</script>
+</body>
+</html>

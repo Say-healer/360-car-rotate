@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--屏蔽标签拨号/email/address链接-->
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="format-detection" content="adress=no"/>
+    <!--不启用缓存-->
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <!-- 最新 ie -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>360 Muilt Slider</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/css/common.css">
+    <link rel="stylesheet" href="lib/css/index.css">
+
+    <script type="text/javascript" src="lib/js/jquery-1.11.2.min.js"></script>
+    <!--<script type="text/javascript" src="lib/js/jquery.flexslider.js"></script>-->
+    <script type="text/javascript" src="lib/js/underscore.js"></script>
+    <script type="text/javascript" src="lib/js/view360.js"></script>
+
+    <style>
+
+    </style>
+</head>
+<body style="height: 100%;overflow: scroll;">
+<div class="car-builder-wrapper con-wrap" id="carBuilderWrap">
+    <!-- main -->
+    <div class="main" id="xMain">
+        <div class="main-wrapper unselectable" id="goodsViewWrap">
+            <div class="goods-viewer" id="goodsViewer" style="visibility: visible;">
+                <div class="goods-touch" id="viewTouch" style="visibility: visible; z-index: 20;"></div>
+                <!--车型360分层图片容器-->
+                <div class="view-box view-360 isShow" id="viewBox360" style="top: 0px;">
+                    <div class="goods-view-bg" id="goodsViewBg" style="visibility: visible;">
+                        <img src="lib/images/ring-stage.jpg">
+                    </div>
+                    <div class="goods-view-wrap" id="view360Wrap">
+
+                    </div>
+                    <div class="goods-arrow360" id="goodsArrow360">
+                        <img src="lib/images/ring-arrow360.png">
+                    </div>
+                    <div class="view360-tips-wrap"></div>
+                    <div id="onLoading360" class="loading2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- config -->
+    <div class="config unselectable" id="carConfig">
+        <div class="level-1" id="modelType" name="modelType">
+            <div class="panel-title">
+                <span class="panel-title-l">款型</span>
+            </div>
+            <div class="panel-con" id="modelTypeCon">
+                <div class="level-2 first " id="second1207" data-id="second1207">
+                    <div class="item-title">
+                        <div class="panel-title-l">
+                            <span>变速箱</span>
+                            <span class="panel-item-money"></span>
+                        </div>
+                    </div>
+                    <div class="optbtn js-opt active" data-content="1.5T+6MT" data-key="second1207" data-value="third2905">
+                        1.5T+6MT
+                    </div>
+                    <div class="optbtn js-opt  disabled" data-content="1.5T+6AT" data-key="second1207" data-value="third2907">
+                        1.5T+6AT
+                    </div>
+                </div>
+                <div class="level-2 first " id="second1205" data-id="second1205">
+                    <div class="item-title">
+                        <div class="panel-title-l">
+                            <span>车型</span>
+                            <span class="panel-item-money"></span>
+                        </div>
+                    </div>
+                    <div class="optbtn js-opt  active" data-content="炫色型" data-key="second1205" data-value="third2895">
+                        炫色型
+                    </div>
+                    <div class="optbtn js-opt" data-content="炫目型" data-key="second1205" data-value="third2893">
+                        炫目型
+                    </div>
+                    <div class="optbtn js-opt" data-content="炫动型" data-key="second1205" data-value="third2897">
+                        炫动型
+                    </div>
+                    <div class="optbtn js-opt" data-content="炫酷型" data-key="second1205" data-value="third2899">
+                        炫酷型
+                    </div>
+                    <div class="optbtn js-opt  disabled" data-content="炫耀型" data-key="second1205" data-value="third2903">
+                        炫耀型
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 百搭件 -->
+        <div class="level-1" id="exterior" name="exterior">
+            <div class="panel-title">
+                <span class="panel-title-l">外观</span>
+            </div>
+            <div class="panel-con" id="exteriorCon">
+                <div class="level-2" id="exteriorColor">
+                    <div class="item-title">
+                        <div class="panel-title-l">
+                            <span>车身颜色</span>
+                            <span class="panel-item-money">&nbsp;&nbsp;-&nbsp;&nbsp;月光白&nbsp;&nbsp;-&nbsp;&nbsp;¥0.00</span>
+                        </div>
+                    </div>
+                    <div class="optbtn-pic js-opt active" data-content="月光白" data-price="0" data-key="jokerParamId671" data-value="619" data-img-key="exteriorColor" data-img-value="white" data-original-title="" title="">
+                        <img src="lib/images/1501241194947.jpg">
+                    </div>
+                    <div class="optbtn-pic js-opt" data-content="炫动红" data-price="0" data-key="jokerParamId671" data-value="617" data-img-key="exteriorColor" data-img-value="red" data-original-title="" title="">
+                        <img src="lib/images/1501241213500.jpg">
+                    </div>
+                    <div class="optbtn-pic js-opt" data-content="繁星蓝" data-price="0" data-key="jokerParamId671" data-value="615" data-img-key="exteriorColor" data-img-value="blue" data-original-title="" title="">
+                        <img src="lib/images/1501241231298.jpg">
+                    </div>
+                </div>
+                <div class="level-2" id="roofColor">
+                    <div class="item-title">
+                        <div class="panel-title-l">
+                            <span>车顶辅色</span>
+                            <span class="panel-item-money">&nbsp;&nbsp;-&nbsp;&nbsp;尊贵黑&nbsp;&nbsp;-&nbsp;&nbsp;¥2500.00</span>
+                        </div>
+                    </div>
+                    <div class="optbtn-pic js-opt active" data-content="尊贵黑" data-price="2500.00" data-key="jokerParamId673" data-value="635" data-img-key="roofColor" data-img-value="black" data-original-title="" title="">
+                        <img src="lib/images/1501241252819.jpg">
+                    </div>
+                </div>
+                <div class="level-2" id="headlamp">
+                    <div class="item-title">
+                        <div class="panel-title-l">
+                            <span>前大灯</span>
+                            <span class="panel-item-money">&nbsp;&nbsp;-&nbsp;&nbsp;卤素&nbsp;&nbsp;-&nbsp;&nbsp;¥0.00</span>
+                        </div>
+                    </div>
+                    <div class="optbtn-pic js-opt active" data-content="卤素" data-price="0" data-key="jokerParamId681" data-value="653" data-img-key="headlamp" data-img-value="level1" data-original-title="" title="">
+                        <img src="lib/images/1501829514530.jpg">
+                    </div>
+                    <div class="optbtn-pic js-opt hide" data-content="LED" data-price="0" data-key="jokerParamId681" data-value="651" data-img-key="headlamp" data-img-value="level2" data-original-title="" title="">
+                        <img src="lib/images/1501829435063.jpg">
+                    </div>
+                </div>
+                <div class="level-2" id="grille">
+                    <div class="item-title">
+                        <div class="panel-title-l">
+                            <span>格栅</span>
+                            <span class="panel-item-money">&nbsp;&nbsp;-&nbsp;&nbsp;喷漆&nbsp;&nbsp;-&nbsp;&nbsp;¥0.00</span>
+                        </div>
+                    </div>
+                    <div class="optbtn-pic js-opt hide" data-content="电镀" data-price="0" data-key="jokerParamId675" data-value="637" data-img-key="grille" data-img-value="level1" data-original-title="" title="">
+                        <img src="lib/images/1501241159280.jpg">
+                    </div>
+                    <div class="optbtn-pic js-opt active" data-content="喷漆" data-price="0" data-key="jokerParamId675" data-value="639" data-img-key="grille" data-img-value="level2" data-original-title="" title="">
+                        <img src="lib/images/1501241175610.jpg">
+                    </div>
+                </div>
+                <div class="level-2" id="wheels">
+                    <div class="item-title">
+                        <div class="panel-title-l">
+                            <span>轮毂+轮胎</span>
+                            <span class="panel-item-money">&nbsp;&nbsp;-&nbsp;&nbsp;17″铝合金轮毂&nbsp;&nbsp;-&nbsp;&nbsp;¥0.00</span>
+                        </div>
+                    </div>
+                    <div class="optbtn-pic js-opt hide" data-content="18″铝合金轮毂" data-price="0" data-key="jokerParamId677" data-value="647" data-img-key="wheels" data-img-value="level1" data-original-title="" title="">
+                        <img src="lib/images/1501241278864.jpg">
+                    </div>
+                    <div class="optbtn-pic js-opt active" data-content="17″铝合金轮毂" data-price="0" data-key="jokerParamId677" data-value="649" data-img-key="wheels" data-img-value="level2" data-original-title="" title="">
+                        <img src="lib/images/1501241295212.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="level-1" id="options" name="options">
+            <div class="panel-title">
+                <span class="panel-title-l">其它</span>
+            </div>
+            <div class="panel-con" id="optionsCon">
+                <div class="level-2" id="louver">
+                    <div class="item-title">
+                        <div class="panel-title-l">
+                            <span>天窗</span>
+                            <span class="panel-item-money">&nbsp;&nbsp;-&nbsp;&nbsp;普通天窗&nbsp;&nbsp;-&nbsp;&nbsp;¥0.00</span>
+                        </div>
+                    </div>
+                    <div class="optbtn-pic js-opt hide" data-content="无" data-price="0" data-key="jokerParamId679" data-value="641" data-img-key="louver" data-img-value="" data-original-title="" title="">
+                        <img src="lib/images/1501241091238.png">
+                    </div>
+                    <div class="optbtn-pic js-opt active" data-content="普通天窗" data-price="0" data-key="jokerParamId679" data-value="643" data-img-key="louver" data-img-value="level1" data-original-title="" title="">
+                        <img src="lib/images/1501241111571.jpg">
+                    </div>
+                    <div class="optbtn-pic js-opt hide" data-content="全景天窗" data-price="0" data-key="jokerParamId679" data-value="645" data-img-key="louver" data-img-value="level2" data-original-title="" title="">
+                        <img src="lib/images/1501241069627.jpg">
+                    </div>
+                </div>
+                <div class="level-2" id="glasses">
+                    <div class="item-title">
+                        <div class="panel-title-l">
+                            <span>车门玻璃</span>
+                            <span class="panel-item-money">&nbsp;&nbsp;-&nbsp;&nbsp;标准款&nbsp;&nbsp;-&nbsp;&nbsp;¥0.00</span>
+                        </div>
+                    </div>
+                    <div class="optbtn-pic js-opt active" data-content="标准款" data-price="0" data-key="jokerParamId683" data-value="655" data-img-key="glasses" data-img-value="" data-original-title="" title="">
+                        <img src="lib/images/1501829628847.jpg">
+                    </div>
+                    <div class="optbtn-pic js-opt hide" data-content="后车窗隐私玻璃" data-price="0" data-key="jokerParamId683" data-value="657" data-img-key="glasses" data-img-value="level2" data-original-title="" title="">
+                        <img src="lib/images/1501829771589.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-ad-wrap">
+            <div class="site-ad"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    //////////////////////////////////////////////////////////////////////
+    //360 view
+    var Data360 = {
+        "11655": {
+            "config": {
+                "pathDomainDe": "../../lib/images/cs55/",
+                "pathDomainMo": "../../lib/images/cs55/",
+                "carName": "cs55",
+                "urlArgs": "13",
+                "packs": {
+                    "sets": {
+                        "roofColor": "车顶辅色",
+                        "wheels": "轮毂",
+                        "grille": "格栅",
+                        "louver": "天窗",
+                        "headlamp": "前大灯",
+                        "glasses": "车门玻璃"
+                    },
+                    "leastNum": 1,
+                    "noneCount": 6,
+                    "checkPackMeg": "请至少选择1项非基本款的车顶辅色、前大灯、格栅、轮毂、天窗或车门玻璃配置！",
+                    "specPacks": [],
+                    "aniPacks": []
+                },
+                "view360": {"initAngle": 2}
+            },
+            "data": {
+                "base": {"path": "base/level1/", "ext": "png", "zIndex": "10"},
+                "grille": {
+                    "path": "",
+                    "ext": "png",
+                    "zIndex": "15",
+                    "deadZones": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+                    "optimize": 2 //优化
+                },
+                "exteriorColor": {"path": "", "ext": "png", "zIndex": "25"},
+                "roofColor": {"path": "", "ext": "png", "zIndex": "35"},
+                "louver": {"path": "", "ext": "png", "zIndex": "40", "deadZones": [6, 7, 8, 9, 10, 11], "optimize": 20},
+                "wheels": {
+                    "path": "",
+                    "ext": "png",
+                    "zIndex": "45",
+                    "deadZones": [0, 1, 23, 11, 12, 13],
+                    "optimize": 6
+                },
+                "headlamp": {
+                    "path": "",
+                    "ext": "png",
+                    "zIndex": "50",
+                    "deadZones": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+                    "optimize": 2
+                },
+                "glasses": {
+                    "path": "",
+                    "ext": "png",
+                    "zIndex": "55",
+                    "deadZones": [0, 1, 23, 11, 12, 13],
+                    "optimize": 6
+                }
+            }
+        }
+    };
+    var productId = "11655";
+
+    // 指定定制车的配置数据json
+    var diyProduct = Data360[productId],
+        diyConfig = diyProduct.config,
+        pathDomain = diyConfig.pathDomainDe,
+        diyPacks = diyConfig.packs;
+
+    // 页面内容区
+    var xBodyEl = $(document.body),
+        xContent = $('.details-container'),
+        // 定制车总容器
+        carBuilderWrapEl = $("#carBuilderWrap"),
+        // 拖动鼠标目标dom
+        touchHandleEl = $("#viewTouch");
+
+    // 360旋转分层容器
+    var container360 = "#view360Wrap",
+        container360El = $(container360);
+
+    // 款型容器
+    var rangeEl = $("#modelType");
+
+    // 页面首次加载
+    var isLoading = true;
+
+    var loading = new Loading({
+        el: "#onLoading"
+    });
+    var loading360 = new Loading({
+        el: "#onLoading360"
+    });
+
+    // 滚动检测点
+    var offsetT = 180,
+        panelItem = $(".level-1", "#carConfig"),
+        configST = parseInt(xContent.css("padding-top")) + 50;
+
+    console.log("diyProduct:>" + JSON.stringify(diyProduct));
+    //console.log(!!diyConfig.view360 ? diyConfig.view360.initAngle : 2);
+    // 初始化360
+    var view360 = new View360(diyProduct, {
+        container: container360,
+        minAngle: 0,
+        maxAngle: 23,
+        initAngle: !!diyConfig.view360 ? diyConfig.view360.initAngle : 2 //2
+    });
+
+    //初始化view360
+    view360.render({
+        defaults: {
+            base: 'base/level1',
+            grille: 'grille/level1',
+            exteriorColor: 'exteriorColor/white',
+            roofColor: 'rootColor/black',
+            louver: '',
+            wheels: 'wheels/level1',
+            headlamp: 'headlamp/level1',
+            glasses: ''
+        },//defaultImg,
+        callback: gone360
+    });
+
+    //初始化点击事件
+    (function() {
+        // 选择配置
+        $('#carConfig').on("click", ".js-opt", diyGo);
+    })();
+
+    // 操作选配项时的处理
+    function diyGo(e) {
+        var $theNode = $(e.currentTarget);
+        console.log("$theNode:>"+$theNode);
+
+        var key = $theNode.attr("data-key");
+        var value = $theNode.attr("data-value");
+        var img_key = $theNode.attr("data-img-key");
+        var img_value = $theNode.attr("data-img-value");
+        console.log(key+":"+value);
+        console.log(img_key+":"+img_value);
+
+        // 当前选中项不可重复点击
+        if ($theNode.hasClass("active") || $theNode.hasClass('disabled')) {
+            return false;
+        }else if(!$theNode.hasClass("active")){
+            $theNode.parent().find('div').removeClass("active");
+            $theNode.addClass("active");
+
+            //用户所点击的项是否是可选的，可选的才能进行后面的操作
+            if (!$theNode.hasClass("disabled")) {
+
+                var data = {
+                    //grille: 'level2',
+                    //exteriorColor: 'red',
+                    //wheels: 'level2'
+                };
+
+                if(img_key && img_value){
+                    data[img_key] = img_value;
+                } else if(key && value){
+                    var objMap = {
+                        third2895:{louver:"level1", headlamp:"level1", wheels:"level2", grille:"level1"},
+                        third2893:{louver:"", headlamp:"level1",wheels:"level2", grille:"level2"},
+                        third2897:{louver:"level2", headlamp:"level1",wheels:"level1", grille:"level1"},
+                        third2899:{louver:"", headlamp:"level2", wheels:"level1", grille:"level2"},
+                        third2903:{},
+                    };
+
+                    data = objMap[value];
+                }
+
+                !loading360.isShow() && loading360.show();
+                _.each(data,function(value, key){
+                    console.log("---------------"+value);
+                    console.log("---------------"+key);
+                    var newData = {};
+                    newData[key] = value;
+                    view360.change(newData, loading360.hide);
+                });
+            }
+        }
+    }
+
+    // 360 render完成后的回调
+    function gone360() {
+        /*检测当前车辆颜色
+         if (CurrentColor) {
+         console.log(CurrentColor);
+         changeColor(parseInt(CurrentColor));
+         }//*/
+        loading360.isLoad = true;
+        loading.hide();
+        $("#goodsViewBg").removeClass("invisible");
+        $(".view360-tips").removeClass("hide");
+        $(container360 + ",#goodsArrow360").removeClass("hide");
+        bindEvent();
+
+        //videojs.options.flash.swf = "../rock/com/jquery-videojs/video-js.swf";
+
+        isLoading = false;
+    }
+
+    /***** 360旋转逻辑 *****/
+    /* 旋转事件 */
+    var direction = 0;
+    var isRotate = false; //旋转状态
+    var startX, lastX;
+    // var _x = 0, _y = 0;
+    // 初始时间
+    var m_monitorStartTime = 0;
+    // 采样率
+    var speedTime = 5;
+    // 渲染计时器
+    var renderTicker = 0;
+    // 旋转终点
+    var targetF = 0;
+    // 旋转当前点
+    var currentF = 0;
+    // 旋转总数
+    var totalF = 23;
+
+    // 旋转回调计时器
+    var do_move_render_timer = function () {
+        if (renderTicker === 0) {
+            renderTicker = setInterval(do_move_render, 15)
+        }
+    };
+
+    // 旋转回调
+    var do_move_render = function () {
+        //待旋转
+        if (currentF != targetF) {
+            var d = targetF < currentF ? Math.floor((targetF - currentF) * 0.1) : Math.ceil((targetF - currentF) * 0.1);
+
+            currentF += d;
+            //console.log("direction:"+direction)
+            view360.rotate(d * -1, 1);
+
+        } else {
+            //moveCount = 0;
+            window.clearInterval(renderTicker);
+            renderTicker = 0;
+        }
+    };
+
+    var calcRotatePara = function (oTarget) {
+        if (m_monitorStartTime < new Date().getTime() - speedTime) {
+            //console.log("starttime:"+m_monitorStartTime+"  "+(new Date().getTime() - 10));
+            var start = parseInt(oTarget.clientX);
+            if (start != lastX) {
+                direction = start > lastX ? -1 : 1;
+                var angle = Math.round(totalF * ((start - lastX) / 400)) * direction * -1; //totalF * 1
+                //console.log("angleM:" + angle);
+                if (angle > 0) {
+                    view360.rotate(direction, angle);
+                    lastX = start;
+                }
+                m_monitorStartTime = new Date().getTime();
+            }
+        }
+    };
+
+    // 桌面端拖动旋转事件响应
+    var onDown = _.throttle(function (ev) {
+        if (isRotate) {
+            return;
+        }
+
+        var e = ev || window.event;
+        var oTarget = e.target || e.srcElement;
+
+        isRotate = true;
+
+        $(".view360-tips").remove();
+        startX = parseInt(e.clientX);
+        lastX = startX;
+
+        xBodyEl.on("mousemove", onMove).on("mouseup", onUp);
+
+        //设置捕获范围
+        if (oTarget.setCapture) {
+            oTarget.setCapture();
+        } else if (window.captureEvents) {
+            window.captureEvents(Event.MOUSEMOVE | Event.MOUSEUP);
+        }
+
+        //防止拖拽时，图片被选中
+        return false;
+    }, 200);
+
+    var onMove = function (ev) {
+        if (!isRotate) {
+            return;
+        }
+        calcRotatePara(ev || window.event);
+        //防止拖拽时，图片被选中
+        return false;
+    };
+
+    var onUp = function (ev) {
+        isRotate = false;
+        direction = 0;
+        var e = ev || window.event;
+        var oTarget = e.target || e.srcElement;
+
+        //if (_x < 0 || _x > touchHandleEl.width()) {
+        //    //console.log("越界");
+        //}
+        // 解除绑定
+        xBodyEl.off('mouseup').off('mousemove');
+
+        if (oTarget.releaseCapture) {
+            oTarget.releaseCapture();
+        } else if (window.captureEvents) {
+            window.captureEvents(Event.MOUSEMOVE | Event.MOUSEUP);
+        }
+    };
+
+    // 移动端拖动旋转事件响应
+    var touchStart = function (e) {
+        var oTarget = e.originalEvent.changedTouches[0] || e.originalEvent.touches[0];
+        e.preventDefault();
+        //当拇指按下时设定为true
+        isRotate = true;
+        $(".view360-tips").remove();
+        lastX = parseInt(oTarget.clientX);
+        xBodyEl.on("touchend", touchEnd);
+        touchHandleEl.on("touchmove", touchMove);
+    };
+
+    var touchMove = function (e) {
+        //当屏幕有多个touch或者页面被缩放过，就不执行move操作
+        if (!isRotate || e.originalEvent.targetTouches.length > 1 || e.scale && e.scale !== 1) {
+            return;
+        }
+        e.preventDefault();
+        var oTarget = e.originalEvent.changedTouches[0] || e.originalEvent.touches[0];
+        calcRotatePara(oTarget);
+        //防止拖拽时，图片被选中
+        return false;
+    };
+
+    var touchEnd = function () {
+        isRotate = false;
+        // 解除绑定
+        xBodyEl.off('touchend');
+        touchHandleEl.off('mousemove');
+    };
+
+    // 键盘旋转事件响应
+    var onKey = _.throttle(function (event) {
+        var e = event || window.event;
+        var key = e.keyCode || e.which || e.charCode;
+
+        // left-up
+        if (e && (key == 37 || key == 38)) {
+            direction = 1;
+        }
+        // right-down
+        if (e && (key == 39 || key == 40)) {
+            direction = -1;
+        }
+        if (direction) {
+            view360.rotate(direction, 1);
+            direction = 0;
+        }
+    }, 100);
+
+    // 事件绑定函数
+    function bindEvent() {
+        //PC端
+        touchHandleEl.off("mousedown").on("mousedown", onDown);
+        //键盘
+        xBodyEl.off("keydown").on("keydown", onKey);
+        //移动端
+        if (isMobile) {
+            touchHandleEl.off("touchstart").on("touchstart", touchStart);
+        }
+    }
+
+    ///////////////////////////////////////////////////
+    /**
+     * 检测是否为可触摸设备
+     */
+    function isMobile() {
+        var ua = navigator.userAgent.toLowerCase();
+        var mua = {
+            IOS: /ipod|iPhone|ipad/.test(ua), //iOS
+            IPHONE: /iphone/.test(ua), //iPhone
+            IPAD: /ipad/.test(ua), //iPad
+            ANDROID: /android/.test(ua), //Android Device
+            WINDOWS: /windows/.test(ua), //Windows Device
+            TOUCH_DEVICE: ('ontouchstart' in window) || /touch/.test(ua), //Touch Device
+            MOBILE: /mobile/.test(ua), //Mobile Device (iPad)
+            ANDROID_TABLET: false, //Android Tablet
+            WINDOWS_TABLET: false, //Windows Tablet
+            TABLET: false, //Tablet (iPad, Android, Windows)
+            SMART_PHONE: false //Smart Phone (iPhone, Android)
+        };
+        mua.ANDROID_TABLET = mua.ANDROID && !mua.MOBILE;
+        mua.WINDOWS_TABLET = mua.WINDOWS && /tablet/.test(ua);
+        mua.TABLET = mua.IPAD || mua.ANDROID_TABLET || mua.WINDOWS_TABLET;
+        mua.SMART_PHONE = mua.MOBILE && !mua.TABLET;
+
+        return mua.SMART_PHONE;
+    }
+
+    /**
+     * 图片loading
+     * @params config {obj}
+     */
+    function Loading(config) {
+        var tEl = $(config.el);
+        return {
+            isLoad: false,
+            show: function () {
+                if (!tEl.hasClass("show")) {
+                    tEl.addClass("show");
+                    touchHandleEl.css({"visibility": "hidden"});
+                }
+            },
+            hide: function () {
+                if (tEl.hasClass("show")) {
+                    tEl.removeClass("show");
+                    touchHandleEl.css({"visibility": "visible"});
+                }
+            },
+            isShow: function () {
+                return tEl.hasClass("show");
+            }
+        }
+    }
+</script>
+</body>
+</html>
